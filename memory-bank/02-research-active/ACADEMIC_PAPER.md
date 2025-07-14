@@ -40,20 +40,18 @@ The model evaluation process is designed to be comprehensive and rigorous. The e
 
 ## Results
 
-The initial model training yielded a high accuracy of 95.5%, but this was misleading due to a severe class imbalance in the dataset. The model was heavily biased towards the "Bukan Ujaran Kebencian" (Not Hate Speech) class and failed to detect any instances of hate speech.
+The initial model training yielded a high accuracy of 95.5%, but this was misleading due to a severe class imbalance in the dataset. The model was heavily biased towards the "Bukan Ujaran Kebencian" (Not Hate Speech) class and failed to detect any instances of hate speech, resulting in a macro F1-score of only 24.4%.
 
-To address this issue, the model was retrained with a new strategy that included stratified sampling, class weighting, and focal loss. This resulted in a much more balanced model with a macro F1-score of 73.7%, a significant improvement from the original model's 40.0%.
+To address this issue, the model was retrained with a new strategy that included stratified sampling, class weighting, and focal loss. This resulted in a much more balanced model with a macro F1-score of 73.7%, a significant improvement from the original model's score.
 
-The table below shows a comparison of the F1-scores for each class before and after the retraining:
+The table below shows a comparison of the macro F1-scores for the model before and after the retraining:
 
-| Class | F1-Score (Before) | F1-Score (After) |
-| --- | --- | --- |
-| Bukan Ujaran Kebencian | 71.3% | 71.3% |
-| Ujaran Kebencian - Ringan | 68.8% | 68.8% |
-| Ujaran Kebencian - Sedang | 69.5% | 69.5% |
-| Ujaran Kebencian - Berat | 85.3% | 85.3% |
+| Model | Macro F1-Score |
+| --- | --- |
+| Original | 24.4% |
+| Improved | 73.7% |
 
-As the table shows, the retrained model's F1-scores for the hate speech classes are significantly improved, and the model is now able to detect hate speech across all categories. The overall accuracy of the retrained model is 73.75%, which is a more realistic representation of its performance.
+As the table shows, the retrained model's macro F1-score is significantly improved, and the model is now able to detect hate speech across all categories. The overall accuracy of the retrained model is 73.75%, which is a more realistic representation of its performance.
 
 ## Discussion
 
